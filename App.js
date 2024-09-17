@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import styled, { ThemeProvider } from 'styled-components';
+import Thrombinoscrope from './src/screens/throbinoscrope';
+import { SafeAreaView, Platform, StatusBar } from 'react-native';
+import theme from './src/styles/theme';
+
+const StyledSafeAreaView = styled(SafeAreaView)`
+    flex: 1;
+    background-color: ${(props) => props.theme.colors.background};
+    padding-top: ${Platform.OS === 'android' ? StatusBar.currentHeight : 0}px;
+`;
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <Text>Open up App.js to start working on your app!</Text>
-            <StatusBar style="auto" />
-        </View>
+        <ThemeProvider theme={theme}>
+            <StyledSafeAreaView>
+                <Thrombinoscrope />
+            </StyledSafeAreaView>
+        </ThemeProvider>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
