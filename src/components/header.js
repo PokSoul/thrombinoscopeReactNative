@@ -16,9 +16,11 @@ const HeaderTitle = styled.Text`
 `;
 
 const Header = () => {
-    return <ContainerHeader>
-        <HeaderTitle>Étudiants de Poudlard</HeaderTitle>
-    </ContainerHeader>;
+    return (
+        <ContainerHeader>
+            <HeaderTitle>Étudiants de Poudlard</HeaderTitle>
+        </ContainerHeader>
+    );
 };
 
 export default Header;
