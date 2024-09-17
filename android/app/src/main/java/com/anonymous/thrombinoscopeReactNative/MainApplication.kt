@@ -1,4 +1,4 @@
-package com.thrombinoscopereactnative
+package com.anonymous.thrombinoscopeReactNative
 
 import android.app.Application
 import android.content.res.Configuration
